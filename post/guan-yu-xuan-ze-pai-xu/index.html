@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 选择排序  | Gridea</title>
+<title>选择排序  | Gridea</title>
 <meta name="description" content="？/我是伞兵">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://Mr-L-R-Y.github.io/favicon.ico?v=1616503138912">
+<link rel="shortcut icon" href="https://Mr-L-R-Y.github.io/favicon.ico?v=1616503758852">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -81,7 +81,7 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>关于 选择排序 </h1>
+            <h1>选择排序 </h1>
             <p class="article-meta">
               2021-03-23
               
@@ -97,31 +97,35 @@
 <li>若Min后元素小于Min，则 a[Min] 与 a[j] 交换位置</li>
 </ul>
 </font>
-<img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif">
-```  c++
-#define _CRT_SECURE_NO_WARNINGS 1
-#include<stdio.h>
+<img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="原理图片">
+<!-- more -->
+<h1>参考代码</h1>
+<pre><code class="language-c++">#define _CRT_SECURE_NO_WARNINGS 1
+#include&lt;stdio.h&gt;
 #define M 10
 int main()
 {
     int a[M], min, j, i, t=0;
-    for (i = 0; i < M; i++)
-        scanf("%d", &a[i]);
-    for (i = 0; i < M - 1; i++)
+    for (i = 0; i &lt; M; i++)
+        scanf(&quot;%d&quot;, &amp;a[i]);
+    for (i = 0; i &lt; M - 1; i++)
     {
         min = i;
-        for (j = i+1; j < M; j++)
-            if (a[min] > a[j])
+        for (j = i+1; j &lt; M; j++)
+            if (a[min] &gt; a[j])
                 min = j;
         t = a[i];
         a[i] = a[min];
         a[min] = t;
     }
-    for (i = 0; i < M; i++)
-        printf("%d\n", a[i]);
+    for (i = 0; i &lt; M; i++)
+        printf(&quot;%d\n&quot;, a[i]);
     return 0;
 }
-```
+
+</code></pre>
+<!-- more -->
+<p><a href="https://www.runoob.com/w3cnote/selection-sort.html">参考地址 菜鸟教程</a></p>
 
             </div>
           </article>
@@ -145,7 +149,7 @@ int main()
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://Mr-L-R-Y.github.io/images/avatar.png?v=1616503138912" class="no-responsive avatar">
+    <img src="https://Mr-L-R-Y.github.io/images/avatar.png?v=1616503758852" class="no-responsive avatar">
     <div class="text-muted">？/我是伞兵</div>
     <div class="social-container">
       
@@ -170,7 +174,7 @@ int main()
         
           
             <li>
-              <a href="https://Mr-L-R-Y.github.io/post/guan-yu-xuan-ze-pai-xu/">关于 选择排序 </a>
+              <a href="https://Mr-L-R-Y.github.io/post/guan-yu-xuan-ze-pai-xu/">选择排序 </a>
             </li>
           
         
@@ -207,11 +211,11 @@ int main()
     </div>
     <div class="row">
       
-        <a href="https://Mr-L-R-Y.github.io/tag/ZxcQUu118/" class="badge secondary">
+        <a href="https://Mr-L-R-Y.github.io/tag/ZxcQUu118/" class="badge success">
           HTML
         </a>
       
-        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge ">
+        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge success">
           Gridea
         </a>
       
