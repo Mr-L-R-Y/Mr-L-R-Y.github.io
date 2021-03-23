@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Mr-L-R-Y.github.io</id>
     <title>Gridea</title>
-    <updated>2021-03-23T11:46:33.288Z</updated>
+    <updated>2021-03-23T12:39:03.302Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Mr-L-R-Y.github.io"/>
     <link rel="self" href="https://Mr-L-R-Y.github.io/atom.xml"/>
@@ -25,7 +25,32 @@
 <li>若Min后元素小于Min，则 a[Min] 与 a[j] 交换位置</li>
 </ul>
 </font>
-<img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif">]]></content>
+<img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif">
+```  c++
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#define M 10
+int main()
+{
+    int a[M], min, j, i, t=0;
+    for (i = 0; i < M; i++)
+        scanf("%d", &a[i]);
+    for (i = 0; i < M - 1; i++)
+    {
+        min = i;
+        for (j = i+1; j < M; j++)
+            if (a[min] > a[j])
+                min = j;
+        t = a[i];
+        a[i] = a[min];
+        a[min] = t;
+    }
+    for (i = 0; i < M; i++)
+        printf("%d\n", a[i]);
+    return 0;
+}
+```
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[HTML基础（ 一 ）]]></title>
