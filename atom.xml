@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Mr-L-R-Y.github.io</id>
     <title>Gridea</title>
-    <updated>2021-03-23T09:41:51.824Z</updated>
+    <updated>2021-03-23T11:46:33.288Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Mr-L-R-Y.github.io"/>
     <link rel="self" href="https://Mr-L-R-Y.github.io/atom.xml"/>
@@ -17,15 +17,14 @@
         </link>
         <updated>2021-03-23T09:26:13.000Z</updated>
         <content type="html"><![CDATA[<h1>算法原理</h1>
+<font color="blue">
 <ul>
 <li>定义变量Min储存数组中最小值的下标</li>
 <li>初始时，将数组第一个元素赋值给Min</li>
 <li>Min赋值过后，定义变量 j 向后搜索 Min 后元素是否小于Min</li>
 <li>若Min后元素小于Min，则 a[Min] 与 a[j] 交换位置</li>
 </ul>
-ul{
-    color:blue;
-}
+</font>
 <img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif">]]></content>
     </entry>
     <entry>
