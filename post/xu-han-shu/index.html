@@ -110,11 +110,10 @@ virtual 函数返回类型 函数名(参数表){<br>
         return len*wid;
     }
 };
-此时，Shape类中的Area函数被定义为虚函数，故编译器会会在类Shape中插入一段不显示的数据，并创建一个表，那段不显示的数据被称为***vptr指针***，指向那个表，那个表叫做***vtbl****,vtbl会保存自己类中的虚函数地址！
-
-*示例一*
-```c++
-#include &quot;iostream&quot;
+</code></pre>
+<p>此时，Shape类中的Area函数被定义为虚函数，故编译器会会在类Shape中插入一段不显示的数据，并创建一个表，那段不显示的数据被称为 <strong>vptr指针</strong>，指向那个表，那个表叫做 <strong>vtbl</strong>,vtbl会保存自己类中的虚函数地址！</p>
+<p><em>示例一</em></p>
+<pre><code class="language-c++">#include &quot;iostream&quot;
 #include&quot;cmath&quot;
 using namespace std;
 const double PI=3.1415926;
@@ -154,11 +153,11 @@ int main(){
     cout&lt;&lt;&quot;The a3 Area is &quot;&lt;&lt;a3.Area()&lt;&lt;endl;         //引用中的Area函数
     return 0;
 }
-此时，基类中的Area函数为成员函数，根据赋值兼容规则，仅对象C返回值。其余对象皆调用基类Area函数
-![](https://Mr-L-R-Y.github.io/post-images/1620916285008.png)
-*实例2*：
-```c++
-#include &quot;iostream&quot;
+</code></pre>
+<p>此时，基类中的Area函数为成员函数，根据赋值兼容规则，仅对象C返回值。其余对象皆调用基类Area函数</p>
+<p><img src="https://Mr-L-R-Y.github.io/post-images/1620916285008.png" alt="" loading="lazy"><br>
+<em>实例2</em>：</p>
+<pre><code class="language-c++">#include &quot;iostream&quot;
 #include&quot;cmath&quot;
 using namespace std;
 const double PI=3.1415926;
@@ -198,8 +197,9 @@ int main(){
     cout&lt;&lt;&quot;The a3 Area is &quot;&lt;&lt;a3.Area()&lt;&lt;endl;         //引用中的Area函数
     return 0;
 }
-此时，基类中Area被声明为虚函数，此时输出结果中指针与引用皆调用派生类中的Area函数。
-![](https://Mr-L-R-Y.github.io/post-images/1620916294638.png)</code></pre>
+</code></pre>
+<p>此时，基类中Area被声明为虚函数，此时输出结果中指针与引用皆调用派生类中的Area函数。</p>
+<figure data-type="image" tabindex="1"><img src="https://Mr-L-R-Y.github.io/post-images/1620916294638.png" alt="" loading="lazy"></figure>
 
                 </div>
 
