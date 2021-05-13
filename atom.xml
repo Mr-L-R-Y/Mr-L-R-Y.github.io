@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Mr-L-R-Y.github.io</id>
-    <title>404文社</title>
-    <updated>2021-05-13T14:36:26.870Z</updated>
+    <title>404莣孒嬡</title>
+    <updated>2021-05-13T14:38:43.821Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Mr-L-R-Y.github.io"/>
     <link rel="self" href="https://Mr-L-R-Y.github.io/atom.xml"/>
     <subtitle>其有至，亦左右</subtitle>
     <logo>https://Mr-L-R-Y.github.io/images/avatar.png</logo>
     <icon>https://Mr-L-R-Y.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 404文社</rights>
+    <rights>All rights reserved 2021, 404莣孒嬡</rights>
     <entry>
         <title type="html"><![CDATA[虚函数]]></title>
         <id>https://Mr-L-R-Y.github.io/post/xu-han-shu/</id>
