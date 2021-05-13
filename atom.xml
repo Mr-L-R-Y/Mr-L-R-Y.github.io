@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Mr-L-R-Y.github.io</id>
     <title>404文社</title>
-    <updated>2021-04-28T11:42:21.445Z</updated>
+    <updated>2021-05-13T14:31:41.678Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Mr-L-R-Y.github.io"/>
     <link rel="self" href="https://Mr-L-R-Y.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://Mr-L-R-Y.github.io/images/avatar.png</logo>
     <icon>https://Mr-L-R-Y.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 404文社</rights>
+    <entry>
+        <title type="html"><![CDATA[虚函数]]></title>
+        <id>https://Mr-L-R-Y.github.io/post/xu-han-shu/</id>
+        <link href="https://Mr-L-R-Y.github.io/post/xu-han-shu/">
+        </link>
+        <updated>2021-05-13T13:48:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[指令周期、机器周期、时钟周期之间的关系]]></title>
+        <id>https://Mr-L-R-Y.github.io/post/zhi-ling-zhou-qi-ji-qi-zhou-qi-shi-zhong-zhou-qi-zhi-jian-de-guan-xi/</id>
+        <link href="https://Mr-L-R-Y.github.io/post/zhi-ling-zhou-qi-ji-qi-zhou-qi-shi-zhong-zhou-qi-zhi-jian-de-guan-xi/">
+        </link>
+        <updated>2021-05-10T11:05:28.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[选择排序 ]]></title>
         <id>https://Mr-L-R-Y.github.io/post/guan-yu-xuan-ze-pai-xu/</id>
