@@ -7,7 +7,7 @@
 <meta name="description" content="阿巴阿巴阿巴。。。。。。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://Mr-L-R-Y.github.io/favicon.ico?v=1620951390466">
+<link rel="shortcut icon" href="https://Mr-L-R-Y.github.io/favicon.ico?v=1620996737229">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -88,13 +88,159 @@
     <p class="article-meta">
       2021-05-13
       
-        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge secondary">
+        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge success">
           C++
         </a>
       
     </p>
     <p class="text-lead">
-      
+      <p><em>虚函数的概念</em>：</p>
+<ol>
+<li>函数在某基类中声明为virtual；</li>
+<li>在一个或多个派生类中被重新定义的成员函数<pre><code class="language-c++">#include&quot;iostream&quot;
+#include&quot;cmath&quot;
+using namespace std;
+const double PI=3.1415926;
+class Shape{
+ protected:
+     double len,wid;
+ public:
+     Shape(double len,double wid){
+         this-&gt;len=len;
+         this-&gt;wid=wid;
+     }
+     //此时，Area在基类中被声明为virtual，为虚函数
+   virtual double Area(){
+         return wid*len;
+     }
+};
+class Circle:public Shape{
+    protected:
+    double r;
+    public:
+    Shape(double len,double wid,double r):Shape(wid,len){
+         this-&gt;r=r;
+    }
+     double Area(){
+         return PI*pow(r,2);
+     }
+};
+
+
+</code></pre>
+</li>
+</ol>
+<p><em>虚函数使用格式</em>：<br>
+virtual 函数返回类型 函数名(参数表){<br>
+函数体<br>
+}；</p>
+<p><em>Ps:</em>:<br>
+<strong>实现多态性的方法</strong>：<br>
+通过指向派生类的基类指针或引用，访问派生类中同名覆盖成员函数。</p>
+<p><em>虚函数的实现</em>：</p>
+<pre><code class="language-c++">class Shape{
+    protected:
+    double wid,len;
+    public:
+    Shape(double len,double wid){
+        this-&gt;len=len;
+        this-&gt;wid=wid;
+    }
+    virtule double Area(){
+        return len*wid;
+    }
+};
+</code></pre>
+<p>此时，Shape类中的Area函数被定义为虚函数，故编译器会会在类Shape中插入一段不显示的数据，并创建一个表，那段不显示的数据被称为 <strong>vptr指针</strong>，指向那个表，那个表叫做 <strong>vtbl</strong>,vtbl会保存自己类中的虚函数地址！</p>
+<p><em>示例一</em></p>
+<pre><code class="language-c++">#include &quot;iostream&quot;
+#include&quot;cmath&quot;
+using namespace std;
+const double PI=3.1415926;
+class Point{
+protected:
+    double len,wid;
+public:
+    Point(double len,double wid){
+        this-&gt;len=len;
+        this-&gt;wid=wid;
+    }
+     double Area(){
+        return 0.0;
+    }
+};
+class Circle:public Point{
+protected:
+    double r;
+public:
+    Circle(double len,double wid,double r): Point(len,wid){
+        this-&gt;r=r;
+    }
+    double Area(){
+        return PI*pow(r,2);
+    }
+};
+int main(){
+    Point a(10,10);                            //创建Point类对象
+    cout&lt;&lt;&quot;The Point Area is &quot;&lt;&lt;a.Area()&lt;&lt;endl;        //调用Area函数输出面积
+    Circle c(10,10,10);                      //创建Circle类对象
+    cout&lt;&lt;&quot;The Circle Area is &quot;&lt;&lt;c.Area()&lt;&lt;endl;      //调用派生类Area函数输出面积
+    Point a2 = c;                                     //使用派生类对象初始化基类对象
+    cout&lt;&lt;&quot;The a2 Area is &quot;&lt;&lt;a2.Area()&lt;&lt;endl;         //调用a2中Area函数
+    Point *pt=&amp;c;                                     //创建指向派生类的基类指针
+    cout&lt;&lt;&quot;The *pt Area is &quot;&lt;&lt;pt-&gt;Area()&lt;&lt;endl;       //调用指针中的Area函数
+    Point &amp;a3=c;                                      //使用派生类初始化基类引用
+    cout&lt;&lt;&quot;The a3 Area is &quot;&lt;&lt;a3.Area()&lt;&lt;endl;         //引用中的Area函数
+    return 0;
+}
+</code></pre>
+<p>此时，基类中的Area函数为成员函数，根据赋值兼容规则，仅对象C返回值。其余对象皆调用基类Area函数</p>
+<p><img src="https://Mr-L-R-Y.github.io/post-images/1620916285008.png" alt="" loading="lazy"><br>
+<em>实例2</em>：</p>
+<pre><code class="language-c++">#include &quot;iostream&quot;
+#include&quot;cmath&quot;
+using namespace std;
+const double PI=3.1415926;
+class Point{
+protected:
+    double len,wid;
+public:
+    Point(double len,double wid){
+        this-&gt;len=len;
+        this-&gt;wid=wid;
+    }
+    virtual double Area(){
+        return 0.0;
+    }
+};
+class Circle:public Point{
+protected:
+    double r;
+public:
+    Circle(double len,double wid,double r): Point(len,wid){
+        this-&gt;r=r;
+    }
+    double Area(){
+        return PI*pow(r,2);
+    }
+};
+int main(){
+    Point a(10,10);                            //创建Point类对象
+    cout&lt;&lt;&quot;The Point Area is &quot;&lt;&lt;a.Area()&lt;&lt;endl;        //调用Area函数输出面积
+    Circle c(10,10,10);                      //创建Circle类对象
+    cout&lt;&lt;&quot;The Circle Area is &quot;&lt;&lt;c.Area()&lt;&lt;endl;      //调用派生类Area函数输出面积
+    Point a2 = c;                                     //使用派生类对象初始化基类对象
+    cout&lt;&lt;&quot;The a2 Area is &quot;&lt;&lt;a2.Area()&lt;&lt;endl;         //调用a2中Area函数
+    Point *pt=&amp;c;                                     //创建指向派生类的基类指针
+    cout&lt;&lt;&quot;The *pt Area is &quot;&lt;&lt;pt-&gt;Area()&lt;&lt;endl;       //调用指针中的Area函数
+    Point &amp;a3=c;                                      //使用派生类初始化基类引用
+    cout&lt;&lt;&quot;The a3 Area is &quot;&lt;&lt;a3.Area()&lt;&lt;endl;         //引用中的Area函数
+    return 0;
+}
+</code></pre>
+<p>此时，基类中Area被声明为虚函数，此时输出结果中指针与引用皆调用派生类中的Area函数。</p>
+<figure data-type="image" tabindex="1"><img src="https://Mr-L-R-Y.github.io/post-images/1620916294638.png" alt="" loading="lazy"></figure>
+
     </p>
     <div class="row">
       <a href="https://Mr-L-R-Y.github.io/post/xu-han-shu/" class="readmore-link">
@@ -132,7 +278,7 @@
     <p class="article-meta">
       2021-03-23
       
-        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge success">
+        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge warning">
           C++
         </a>
       
@@ -166,7 +312,7 @@
     <p class="article-meta">
       2021-03-11
       
-        <a href="https://Mr-L-R-Y.github.io/tag/ZxcQUu118/" class="badge secondary">
+        <a href="https://Mr-L-R-Y.github.io/tag/ZxcQUu118/" class="badge warning">
           HTML
         </a>
       
@@ -210,7 +356,7 @@
     <p class="article-meta">
       2018-12-12
       
-        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge warning">
+        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge secondary">
           Gridea
         </a>
       
@@ -241,7 +387,7 @@
       
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://Mr-L-R-Y.github.io/images/avatar.png?v=1620951390466" class="no-responsive avatar">
+    <img src="https://Mr-L-R-Y.github.io/images/avatar.png?v=1620996737229" class="no-responsive avatar">
     <div class="text-muted">阿巴阿巴阿巴。。。。。。</div>
     <div class="social-container">
       
@@ -315,15 +461,15 @@
     </div>
     <div class="row">
       
-        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge ">
+        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge secondary">
           C++
         </a>
       
-        <a href="https://Mr-L-R-Y.github.io/tag/ZxcQUu118/" class="badge success">
+        <a href="https://Mr-L-R-Y.github.io/tag/ZxcQUu118/" class="badge warning">
           HTML
         </a>
       
-        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge success">
+        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge secondary">
           Gridea
         </a>
       
