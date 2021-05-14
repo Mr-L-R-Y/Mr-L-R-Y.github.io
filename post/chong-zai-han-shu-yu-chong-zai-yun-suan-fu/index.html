@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Hello Gridea | 404莣孒嬡</title>
+<title>重载函数 与 重载运算符 | 404莣孒嬡</title>
 <meta name="description" content="阿巴阿巴阿巴。。。。。。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,45 +81,55 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>Hello Gridea</h1>
+            <h1>重载函数 与 重载运算符</h1>
             <p class="article-meta">
-              2018-12-12
-              
-                <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge success">
-                  Gridea
-                </a>
+              2021-05-14
               
             </p>
             
-              <img src="https://Mr-L-R-Y.github.io/post-images/hello-gridea.png" alt="Hello Gridea">
-            
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <p><em>重载函数</em>：</p>
+<p>在同一作用域中，某个函数被指定多个定义。</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+void Print(int a){
+    cout&lt;&lt;&quot;仅有一个参数的Print函数&quot;&lt;&lt;endl;
+}
+void Print(int a,int b){
+    cout&lt;&lt;&quot;两个参数的Print函数&quot;&lt;&lt;endl;
+}
+int main() {
+    Print(10);
+    Print(10,20);
+    return 0;
+}
+</code></pre>
+<p>结果为：</p>
+<pre><code class="language-c++">仅有一个参数的Print函数
+两个参数的Print函数
+</code></pre>
+<p><em>重载运算符</em>：</p>
+<p>在同一作用域中，某个运算符被指定多个定义。</p>
+<p><em>重载声明</em>：<br>
+重载声明是指一个与<strong>之前已经在该作用域内声明过的函数或方法</strong>具有<strong>相同名称</strong>的声明，但是它们的参数列表和定义（实现）<strong>不相同</strong>。</p>
+<p><em>重载决策</em><br>
+当调用一个重载函数或重载运算符时，编译器通过把您所使用的参数类型与定义中的参数类型进行比较，决定选用最合适的定义。选择最合适的重载函数或重载运算符的过程，称为重载决策。</p>
 
             </div>
           </article>
         </div>
         <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Mr-L-R-Y.github.io/post/xu-han-shu/">
+                <h3 class="post-title">
+                  虚函数
+                </h3>
+              </a>
+            </div>
           
         </div>
         
@@ -207,7 +217,7 @@
     </div>
     <div class="row">
       
-        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge success">
+        <a href="https://Mr-L-R-Y.github.io/tag/1R5vDHLQd/" class="badge warning">
           C++
         </a>
       
@@ -215,7 +225,7 @@
           HTML
         </a>
       
-        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge secondary">
+        <a href="https://Mr-L-R-Y.github.io/tag/TcLyc7ZdG/" class="badge warning">
           Gridea
         </a>
       
